@@ -1,0 +1,82 @@
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>temvik</title>
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="external/jquery/jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+
+
+<style>
+
+body{
+	font-family: Tahoma;
+	color: #AAAAAA;
+	background-color: black;
+}
+
+</style>
+
+<script>
+
+
+</script>
+</head>
+
+<body>
+	1. SILAKAN MASUKKAN APIKEY ANDA!<br>
+	<input type="text" id="txtApi" style="height: 30px;width: 70px;"> <button id="btnSimpanApi">SIMPAN &amp; RELOAD</button><br>
+	<i>biarkan 0000000000 jika Anda ingin menggunakan AI secara anonim. namun antrian anonim selalu di antrian paling belakang. silakan klik <u>https://stablehorde.net/register</u> untuk mendapatkan APIKEY secara gratis.</i>
+	
+	<h2>Selamat datang <span id="txtUsernameWelcome"></span></h2>
+
+	<table width="100%" border="1">
+		<tr>
+			<td>
+				Masukkan Prompt:<br>
+				<textarea id="txtProm" style="width: 100%;height: 130px;"></textarea>
+				Negativ:<br>
+				<textarea id="txtNegs" style="width: 100%;height: 130px;"></textarea>
+			</td>
+			<td width="50%" rowspan="6" align="center" valign="top">
+				<button id="btnGenerate">GENERATE</button><br>
+				<img id="imgHasil1" src="" style="width: 200px;height: auto;"><br>
+				<button id="btnBesarkan1">Besarkan</button>
+				<button id="btnUnduhPng1">Unduh PNG</button><br>
+				<span id="txtState1"></span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<select id="txtW">
+					<option value="512">512</option>
+					<option value="768">768</option>
+				</select> x 
+				<select id="txtH">
+					<option value="512">512</option>
+					<option value="768">768</option>
+				</select> (lebar x tinggi)
+			</td>
+		</tr>
+		<tr><td>
+			<input value="8" id="txtCfg"> (CFG Scale)
+		</td></tr>
+		<tr><td>
+			<input value="30" id="txtStep"> (Step)
+		</td></tr>
+		<tr><td>
+			<input value="" id="txtSeed"> (Seed) <i>biarkan kosong = random</i>
+		</td></tr>
+		<tr><td>
+			<select id="txtModel">
+				<option value="ChilloutMix">ChilloutMix</option>
+				<option value="Deliberate">Deliberate</option>
+			</select> (Model)
+		</td></tr>
+	</table>
+
+</body>
+
+</html>
