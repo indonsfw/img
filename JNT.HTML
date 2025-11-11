@@ -1,0 +1,43 @@
+<html>
+<head>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+	$("#btnKlik").click(function(){
+		var str = $("#txtPaste").val().replace(/(\r\n|\n|\r)/gm, "");
+		str = str.replace(/\s\s+/g, ' ');
+		str = str.replace(/\\\"/g, '"'); 
+		
+		//var ooo = JSON.parse(str);
+		var ooo2 = JSON.parse(str);
+		
+		ooo2.sort((a, b) => b.scanTime.localeCompare(a.scanTime));
+		
+		for(var i=0; i<ooo2.length; i++){
+			var locale = ooo2[i].itemsvalue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			$("#payLoad").append( `
+<p> 
+${ooo2[i].billcode}<br>
+<b>${ooo2[i].receivername}</b><br>
+${ooo2[i].receiveraddress}<br>
+${ooo2[i].paytype} - <b>${locale}</b> <br>
+<small>${ooo2[i].scanTime}</small> <br>
+</p>
+			` );
+		}
+
+		//console.log(ooo2);
+	});
+});
+</script>
+</head>
+
+<body>
+<textarea id="txtPaste"></textarea><button id="btnKlik">  KLIK  </button>
+
+<div id="payLoad">
+
+</div>
+</body>
+</html>
